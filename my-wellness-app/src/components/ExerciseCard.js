@@ -26,14 +26,14 @@ return  <div onClick={toggleFlip} class="ui centered card">
     <a class="header">{exercise.exercise_name}</a>
     <div class="meta">
     <div class="extra content">
-    <span class="left floated like">
+    <h3 class="left floated like">
     <i class="like icon"></i>
     Like
-    </span>
-    <span class="right floated star">
+    </h3>
+    <h3 class="right floated star">
     <i class="star icon"></i>
     Favorite
-    </span>
+    </h3>
     </div>
     </div> 
     </div>
