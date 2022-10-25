@@ -1,8 +1,8 @@
 // import logo from './logo.svg';
 // import './App.css';
 import React from 'react';
-import NavBar from './NavBar';
-import 'semantic-ui-css/semantic.min.css';
+import NavBar from './components/NavBar';
+
 
 function App() {
   return (
