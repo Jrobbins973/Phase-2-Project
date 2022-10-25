@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";  
 import ExerciseContainer from "./ExerciseContainer";
-import 'semantic-ui-css/semantic.min.css';
 
 const wellnessUrl = 'http://localhost:3000/exercises'
 
