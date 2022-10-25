@@ -27,7 +27,7 @@ function EquipmentCard(props){
 
     <Button  animated='fade'>
         <Button.Content visible>{`$${equipment.price}`}</Button.Content>
-        <Button.Content hidden><a href={equipment.item_link}>Buy Now!</a></Button.Content>
+        <Button.Content hidden><a href={equipment.item_link} target="_blank">Buy Now!</a></Button.Content>
     </Button>
 
 
