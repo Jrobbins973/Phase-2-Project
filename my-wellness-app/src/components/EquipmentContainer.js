@@ -5,15 +5,15 @@ function EquipmentContainer(props) {
 
     const {equipmentData} = props
 
-    // const renderEquipment = equipmentData.map(equipment => 
-    // <EquipmentCard 
-    // key={equipment.id}
-    // equipment={equipment}/>   )
+    const renderEquipment = equipmentData.map(equipment => 
+    <EquipmentCard 
+    key={equipment.id}
+    equipment={equipment}/>   )
 
 
     return <div>
 
-
+{renderEquipment}
     </div>
 }
 
