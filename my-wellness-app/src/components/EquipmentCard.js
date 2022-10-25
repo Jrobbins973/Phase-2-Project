@@ -1,13 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import { Card, Icon, Image, Button} from 'semantic-ui-react'
 
 function EquipmentCard(props){
     
+    const [save, setSave] = useState(false)
     
     const {equipment} = props
 
+    const handleClick = () => {
+        setSave(!save)
+    }
 
-    return  <Card class="ui centered card">
+    return  <Card className="ui centered card">
         <Image src={equipment.item_image} wrapped ui={false} />
         <Card.Content>
         <Card.Header>{equipment.item_name}</Card.Header>
@@ -21,18 +25,19 @@ function EquipmentCard(props){
         <Card.Content extra>
 
 
-    <Button animated='fade'>
+    <Button  animated='fade'>
         <Button.Content visible>{`$${equipment.price}`}</Button.Content>
         <Button.Content hidden><a href={equipment.item_link}>Buy Now!</a></Button.Content>
     </Button>
 
 
-    <Button animated='vertical'>
+    <Button  animated='vertical'>
     <Button.Content hidden>Save</Button.Content>
         <Button.Content visible>
         <Icon name='check' />
         </Button.Content>
     </Button>
+
 
     
         </Card.Content>
