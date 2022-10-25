@@ -7,7 +7,7 @@ function EquipmentCard(props){
     const {equipment} = props
 
 
-    return ( <Card class="ui centered card" >
+    return  <Card class="ui centered card">
         <Image src={equipment.item_image} wrapped ui={false} />
         <Card.Content>
         <Card.Header>{equipment.item_name}</Card.Header>
@@ -23,8 +23,15 @@ function EquipmentCard(props){
         <Button.Content visible>{`$${equipment.price}`}</Button.Content>
         <Button.Content hidden><a href={equipment.item_link}>Buy Now!</a></Button.Content>
     </Button>
+    <Button animated='vertical'>
+    <Button.Content hidden>Save</Button.Content>
+        <Button.Content visible>
+        <Icon name='check' />
+        </Button.Content>
+    </Button>
         </Card.Content>
-    </Card>)
+    </Card>
+    
 }
 
 export default EquipmentCard

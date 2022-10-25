@@ -4,7 +4,6 @@ import ExerciseCard from "./ExerciseCard";
 function ExerciseContainer(props) {
 
     const {exerciseData} = props
-    console.log(exerciseData)
 
     const renderExercises = exerciseData.map(exercise => 
     

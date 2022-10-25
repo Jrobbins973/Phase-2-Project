@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";  
 import ExerciseContainer from "./ExerciseContainer";
 import EquipmentContainer from "./EquipmentContainer";
+import { Input, Menu, Segment } from 'semantic-ui-react'
 
 const exerciseUrl = 'http://localhost:3000/exercises'
 const equipmentUrl = 'http://localhost:3000/equipment'
@@ -25,7 +26,30 @@ useEffect(() => {
 
 return (
     <>
-    <div class="ui pointing menu">
+    <Menu pointing>
+        <Menu.Item
+            name='Home'
+            // active={activeItem === 'home'}
+            // onClick={this.handleItemClick}
+        />
+        <Menu.Item
+            name='Exercises'
+            // active={activeItem === 'messages'}
+            // onClick={this.handleItemClick}
+        />
+        <Menu.Item
+            name='Equipment'
+            // active={activeItem === 'friends'}
+            // onClick={this.handleItemClick}
+        />
+        <Menu.Menu position='right'>
+            <Menu.Item>
+            <Input icon='search' placeholder='Where is your pain?' />
+            </Menu.Item>
+        </Menu.Menu>
+        </Menu>
+
+    {/* <div class="ui pointing menu">
     <a class="item active">
     Home
     </a>
@@ -47,7 +71,7 @@ return (
 <div class="ui segment">
     <p></p>
     
-</div>
+</div> */}
 {/* These render the cards */}
 <ExerciseContainer exerciseData = {exerciseData} />
 <EquipmentContainer equipmentData = {equipmentData} />
