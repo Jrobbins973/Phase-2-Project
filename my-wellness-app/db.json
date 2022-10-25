@@ -3,7 +3,7 @@
     {
         "id": 1,
         "exercise_name": "Overhead Tricep Stretch",
-        "muscle-group": "Triceps",
+        "muscle_group": "Triceps",
         "category": "arms",
         "description": "Raise your arm and bend it so that your hand reaches toward the opposite side. Use your other hand and pull the elbow toward your head until you feel a stretch",
         "duration": "Hold the stretch for 15-30 seconds on each arm",
