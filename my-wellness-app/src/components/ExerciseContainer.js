@@ -3,9 +3,10 @@ import ExerciseCard from "./ExerciseCard";
 
 function ExerciseContainer(props) {
 
-    const {wellnessData} = props
+    const {exerciseData} = props
+    console.log(exerciseData)
 
-    const renderExercises = wellnessData.map(exercise => 
+    const renderExercises = exerciseData.map(exercise => 
     
     <ExerciseCard 
     key={exercise.id}

@@ -1,22 +1,30 @@
 import React, {useState, useEffect} from "react";  
 import ExerciseContainer from "./ExerciseContainer";
+import EquipmentContainer from "./EquipmentContainer";
 
-const wellnessUrl = 'http://localhost:3000/exercises'
-
+const exerciseUrl = 'http://localhost:3000/exercises'
+const equipmentUrl = 'http://localhost:3000/equipment'
 
 
 function NavBar (props){
 
-const [wellnessData, setWellnessData] = useState([])
+const [exerciseData, setExerciseData] = useState([])
+const [equipmentData, setEquipmentData] = useState([])
 
 useEffect(() => {
-    fetch(wellnessUrl)
+    fetch(exerciseUrl)
     .then(res => res.json())
-    .then(setWellnessData)
+    .then(setExerciseData)
 },[])
 
-    return (
-        <>
+useEffect(() => {
+    fetch(equipmentUrl)
+    .then(res => res.json())
+    .then(setEquipmentData)
+},[])
+
+return (
+    <>
     <div class="ui pointing menu">
     <a class="item active">
     Home
@@ -40,7 +48,10 @@ useEffect(() => {
     <p></p>
     
 </div>
-<ExerciseContainer wellnessData = {wellnessData} />
+{/* These render the cards */}
+<ExerciseContainer exerciseData = {exerciseData} />
+<EquipmentContainer equipmentData = {equipmentData} />
+
 </>
 )
 
