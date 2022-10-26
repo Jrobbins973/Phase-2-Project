@@ -5,16 +5,19 @@ import ExerciseCardFront from "./ExerciseCardFront";
 
 
 function ExerciseCard(props){
-    const {toggleFlip} = props
+    const[details, setDetails] = useState(false)
     const {exercise}= props
-    const {details} = props
 
-
+const toggleFlip  = () => {
+        setDetails(!details)
+    }
     
 return (
     <div>
         {/* <h2>This is the Exercise Card</h2> */}
-        {details? <ExerciseCardFront exercise={exercise}  toggleFlip={toggleFlip}/> : <ExerciseCardBack exercise={exercise} toggleFlip={toggleFlip}/> }
+        {details? <ExerciseCardBack exercise={exercise} toggleFlip = {toggleFlip}/> 
+        : 
+        <ExerciseCardFront exercise={exercise} toggleFlip = {toggleFlip}/>  }
     </div>
 )
 }

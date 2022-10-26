@@ -2,17 +2,18 @@ import React, {useState, useEffect} from "react";
 import ExerciseContainer from "./ExerciseContainer";
 import EquipmentContainer from "./EquipmentContainer";
 import Home from "./Home";
-import { Input, Menu} from 'semantic-ui-react'
-import {Switch, Route, Link, NavLink} from 'react-router-dom'
+import { Input, Menu, Button, Icon} from 'semantic-ui-react'
+import {Switch, Route, Link} from 'react-router-dom'
 
 const exerciseUrl = 'http://localhost:3000/exercises'
 const equipmentUrl = 'http://localhost:3000/equipment'
 
 
 function NavBar (props){
-
 const [exerciseData, setExerciseData] = useState([])
 const [equipmentData, setEquipmentData] = useState([])
+const [darkMode, setDarkMode] = useState(false)
+
 
 useEffect(() => {
     fetch(exerciseUrl)
@@ -29,11 +30,24 @@ useEffect(() => {
 function handleChange (e){
     console.log(e.target.change)
 }
+const body = document.getElementsByTagName('body')[0]
+
+function darkModeToggle(){
+    setDarkMode(!darkMode)
+}
+
+body.style.backgroundColor = darkMode ? "grey" : "white"
 
 return (
-    <div>
+    <div className="App">
     
     <Menu pointing>
+        <Button onClick={darkModeToggle}  animated>
+            <Button.Content visible>Dark Mode</Button.Content>
+            <Button.Content hidden>
+                <Icon name='moon' />
+            </Button.Content>
+        </Button>
         <Link to="/">
             <Menu.Item name='Home'/>
         </Link>
