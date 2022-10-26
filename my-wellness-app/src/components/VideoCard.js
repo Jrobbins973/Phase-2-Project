@@ -8,11 +8,13 @@ return <div>
     id='GdT_XyB9voI'
     placeholder='/images/image-16by9.png'
     source='youtube'
+    height="75%"
+    width="75%"
     iframe={{
         allowFullScreen: true,
         style: {
         padding:0,
-
+        
         },
     }}
     />
