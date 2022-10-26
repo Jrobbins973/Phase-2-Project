@@ -22,11 +22,12 @@ function ExerciseCardBack(props){
             {createSteps}
         </ol>
     </Card.Content>
-        {exercise.duration}
+        
         
     <Card.Content extra>
 
-    
+    <p>{exercise.duration}
+            </p>
     {/* <Button onClick={handleToggle} >
          {/* Favorite this for Later Insert Star icon */}
      {/* </Button> */}
