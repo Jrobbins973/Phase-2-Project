@@ -100,7 +100,7 @@ return (
 
     <Switch>
         <Route path="/exercise-list">
-            <ExerciseSearch handleSearch={handleExerciseSearch}/> 
+            <ExerciseSearch handleExerciseSearch={handleExerciseSearch}/> 
             <br></br> 
             <br></br> 
             
