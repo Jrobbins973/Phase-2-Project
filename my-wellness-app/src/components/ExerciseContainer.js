@@ -16,7 +16,7 @@ function ExerciseContainer(props) {
     exercise={exercise}
     />)
 
-    return <div>
+    return <div className="ui grid container">
         {renderExercises}
     </div>
 }

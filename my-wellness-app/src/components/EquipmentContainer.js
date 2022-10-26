@@ -1,5 +1,6 @@
 import React from "react";
 import EquipmentCard from "./EquipmentCard";
+import {Grid} from 'semantic-ui-react'
 
 function EquipmentContainer(props) {
 
@@ -11,9 +12,10 @@ function EquipmentContainer(props) {
     equipment={equipment}/>   )
 
 
-    return <div>
+return <div className="ui grid container">
 
-{renderEquipment}
+    {renderEquipment}
+
     </div>
 }
 
