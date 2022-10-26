@@ -2,8 +2,7 @@ import React, {useState, useEffect} from "react";
 import ExerciseContainer from "./ExerciseContainer";
 import EquipmentContainer from "./EquipmentContainer";
 import Home from "./Home";
-import { Input, Menu, Button, Icon} from 'semantic-ui-react'
-import {Switch, Route, Link} from 'react-router-dom'
+
 
 const exerciseUrl = 'http://localhost:3000/exercises'
 const equipmentUrl = 'http://localhost:3000/equipment'
@@ -59,6 +58,10 @@ return (
         <Link to="/equipment-list">
         <Menu.Item name='Equipment'/>
         </Link>
+
+        <Link to="/videos">
+        <Menu.Item name='Videos'/>
+        </Link>
         
         <Menu.Menu position='right'>
             <Menu.Item>
@@ -84,7 +87,13 @@ return (
         <Route path="/equipment-list">
             <EquipmentContainer equipmentData = {equipmentData} />
         </Route>
-    </Switch>   
+    </Switch> 
+
+    <Switch>
+        <Route path="/videos">
+            <VideoContainer />
+        </Route>
+    </Switch>  
 {/* </Switch> */}
 </div>
 )
