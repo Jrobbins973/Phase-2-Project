@@ -12,7 +12,7 @@ function handleToggle(){
     }
 
 
-return <Card>
+return <Card className='card.ui.card'>
     <Image onClick = {toggleFlip} src={exercise.exercise_image} />
     <Card.Content>
     <Card.Header>{exercise.exercise_name}</Card.Header>

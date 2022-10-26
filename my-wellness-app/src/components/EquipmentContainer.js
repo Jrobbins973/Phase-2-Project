@@ -13,7 +13,7 @@ function EquipmentContainer(props) {
 
 
 return <div className="ui grid container">
-
+    
     {renderEquipment}
 
     </div>

@@ -3,12 +3,12 @@ import ExerciseCard from "./ExerciseCard";
 
 function ExerciseContainer(props) {
     
-    const {exerciseData} = props
+    const {filterExercises} = props
     
    
 
 
-    const renderExercises = exerciseData.map(exercise => 
+    const renderExercises = filterExercises.map(exercise => 
     
     <ExerciseCard
 
