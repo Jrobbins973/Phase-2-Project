@@ -12,8 +12,7 @@ return <div>
         allowFullScreen: true,
         style: {
         padding:0,
-        width:"70%",
-        height:"70%"
+
         },
     }}
     />
