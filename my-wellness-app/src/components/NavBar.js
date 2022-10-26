@@ -6,6 +6,7 @@ import { Menu, Icon, Image, Button, Input } from 'semantic-ui-react'
 import {Link, Switch, Route} from 'react-router-dom'
 import VideoContainer from "./VideoContainer";
 import ExerciseSearch from "./ExerciseSearch";
+import EquipmentSearch from "./EquipmentSearch";
 
 
 const exerciseUrl = 'http://localhost:3000/exercises'
@@ -41,12 +42,21 @@ body.style.backgroundColor = darkMode ? "grey" : "white"
 
 // search bar functionality for exercise
 const [exerciseSearch, setExerciseSearch] = useState("")
-const handleSearch = (e) => {
+const handleExerciseSearch = (e) => {
     setExerciseSearch(e.target.value)
 }
-
+// filtered data that gets passed down to the cards, allowing for search to work
 const filterExercises = 
 exerciseData.filter(exercise =>  exercise.category.toLowerCase().includes(exerciseSearch.toLowerCase()))
+
+// search bar functionality for equipments
+const [equipmentSearch, setEquipmentSearch] = useState("")
+const handleEquipmentSearch = (e) => {
+    setEquipmentSearch(e.target.value)
+}
+
+const filterEquipment = 
+equipmentData.filter(equipment => equipment.item_description.toLowerCase().includes(equipmentSearch.toLowerCase()))
 
 return (
     <div className="App">
@@ -90,7 +100,7 @@ return (
 
     <Switch>
         <Route path="/exercise-list">
-            <ExerciseSearch handleSearch={handleSearch}/> 
+            <ExerciseSearch handleSearch={handleExerciseSearch}/> 
             <br></br> 
             <br></br> 
             
@@ -100,7 +110,10 @@ return (
 
     <Switch>
         <Route path="/equipment-list">
-            <EquipmentContainer equipmentData = {equipmentData} />
+            <EquipmentSearch handleEquipmentSearch={handleEquipmentSearch}/>
+            <br></br>
+            <br></br>
+            <EquipmentContainer filterEquipment = {filterEquipment} />
         </Route>
     </Switch> 
 

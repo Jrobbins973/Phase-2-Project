@@ -4,9 +4,9 @@ import {Grid} from 'semantic-ui-react'
 
 function EquipmentContainer(props) {
 
-    const {equipmentData} = props
+    const {filterEquipment} = props
 
-    const renderEquipment = equipmentData.map(equipment => 
+    const renderEquipment = filterEquipment.map(equipment => 
     <EquipmentCard 
     key={equipment.id}
     equipment={equipment}/>   )
