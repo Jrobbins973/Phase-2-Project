@@ -3,20 +3,32 @@ import { Card, Icon, Image, } from 'semantic-ui-react'
 
 function ExerciseCardBack(props){
     const {exercise}= props
-    return <Card>
+
+    const createSteps= exercise.description.map((exerciseStep) => {
+    return <li>{exerciseStep}</li>})
     
+    //The steps are not rendering individually, lets find out how to fix that.
+    return <Card>
     <Card.Content>
-    <Card.Header>{exercise.exercise_name}</Card.Header>
+    <Card.Header>
+        <h2>
+            {exercise.exercise_name}
+        </h2>
+        </Card.Header>
     <Card.Meta>
-        {exercise.muscle_group}
     </Card.Meta>
+        <ol>
+            {createSteps}
+        </ol>
     </Card.Content>
+        {exercise.duration}
+        
     <Card.Content extra>
 
     
     {/* <Button onClick={handleToggle} >
-        {/* Favorite this for Later Insert Star icon */}
-    {/* </Button> */}
+         {/* Favorite this for Later Insert Star icon */}
+     {/* </Button> */}
     
 
     </Card.Content>

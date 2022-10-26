@@ -1,37 +1,21 @@
-import React, {useState} from "react";
+import React from "react";
 import { Card, Icon, Image, Button, } from 'semantic-ui-react'
+import ExerciseCardBack from "./ExerciseCardBack";
+import ExerciseCardFront from "./ExerciseCardFront";
 
-function ExerciseCardFront(props){
+function ExerciseCard(props){
     const {exercise}= props
 
-    const[ toggleButton, setToggleButton]= useState(false)
     
-
-function handleToggle(){
-        setToggleButton(!toggleButton)
-    }
-
-
-return <Card>
-    <Image src={exercise.exercise_image} />
-    <Card.Content>
-    <Card.Header>{exercise.exercise_name}</Card.Header>
-    <Card.Meta>
-        {exercise.muscle_group}
-    </Card.Meta>
-    </Card.Content>
-    <Card.Content extra>
-
-    
-    <Button onClick={handleToggle} color= {toggleButton ? "blue" : "grey"}>
-        {toggleButton ? "I've done this exercise today! Yay" : "I need to do this exercise!"}
-    </Button>
-    
-
-    </Card.Content>
-</Card>
+return (
+    <div>
+        <h2>This is the Exercise Card</h2>
+        <ExerciseCardFront exercise={exercise} key={exercise.id}/>
+        <ExerciseCardBack exercise={exercise}/>
+    </div>
+)
 }
 
 
 
-export default ExerciseCardFront
+export default ExerciseCard
