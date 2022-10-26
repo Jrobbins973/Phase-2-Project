@@ -2,6 +2,9 @@ import React, {useState, useEffect} from "react";
 import ExerciseContainer from "./ExerciseContainer";
 import EquipmentContainer from "./EquipmentContainer";
 import Home from "./Home";
+import { Menu, Icon, Image, Button, Input } from 'semantic-ui-react'
+import {Link, Switch, Route} from 'react-router-dom'
+import VideoContainer from "./VideoContainer";
 
 
 const exerciseUrl = 'http://localhost:3000/exercises'
