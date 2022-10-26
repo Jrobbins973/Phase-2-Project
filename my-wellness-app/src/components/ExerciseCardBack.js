@@ -3,12 +3,13 @@ import { Card, Icon, Image, } from 'semantic-ui-react'
 
 function ExerciseCardBack(props){
     const {exercise}= props
+    const{toggleFlip} = props
 
     const createSteps= exercise.description.map((exerciseStep) => {
     return <li>{exerciseStep}</li>})
     
     //The steps are not rendering individually, lets find out how to fix that.
-    return <Card>
+    return <Card onClick={toggleFlip}>
     <Card.Content>
     <Card.Header>
         <h2>

@@ -3,7 +3,7 @@ import { Card, Icon, Image, Button, } from 'semantic-ui-react'
 
 function ExerciseCardFront(props){
     const {exercise}= props
-
+    const {toggleFlip} = props
     const[ toggleButton, setToggleButton]= useState(false)
     
 
@@ -13,7 +13,7 @@ function handleToggle(){
 
 
 return <Card>
-    <Image src={exercise.exercise_image} />
+    <Image onClick = {toggleFlip} src={exercise.exercise_image} />
     <Card.Content>
     <Card.Header>{exercise.exercise_name}</Card.Header>
     <Card.Meta>
