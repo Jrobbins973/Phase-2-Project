@@ -28,6 +28,10 @@
   color: #61dafb;
 }
 
+card.ui.card {
+  background: grey;
+}
+
 /* .App.dark {
   background-color: grey;
 }

@@ -5,6 +5,7 @@ import Home from "./Home";
 import { Menu, Icon, Image, Button, Input } from 'semantic-ui-react'
 import {Link, Switch, Route} from 'react-router-dom'
 import VideoContainer from "./VideoContainer";
+import ExerciseSearch from "./ExerciseSearch";
 
 
 const exerciseUrl = 'http://localhost:3000/exercises'
@@ -16,29 +17,36 @@ const [exerciseData, setExerciseData] = useState([])
 const [equipmentData, setEquipmentData] = useState([])
 const [darkMode, setDarkMode] = useState(false)
 
-
+//fetches exercise data
 useEffect(() => {
     fetch(exerciseUrl)
     .then(res => res.json())
     .then(setExerciseData)
 },[])
-
+//fetches equipment dataset
 useEffect(() => {
     fetch(equipmentUrl)
     .then(res => res.json())
     .then(setEquipmentData)
 },[])
 
-function handleChange (e){
-    console.log(e.target.change)
-}
+//this accesses the css for body, and toggles dark mode
 const body = document.getElementsByTagName('body')[0]
 
 function darkModeToggle(){
     setDarkMode(!darkMode)
 }
-
 body.style.backgroundColor = darkMode ? "grey" : "white"
+
+
+// search bar functionality for exercise
+const [exerciseSearch, setExerciseSearch] = useState("")
+const handleSearch = (e) => {
+    setExerciseSearch(e.target.value)
+}
+
+const filterExercises = 
+exerciseData.filter(exercise =>  exercise.category.toLowerCase().includes(exerciseSearch.toLowerCase()))
 
 return (
     <div className="App">
@@ -65,12 +73,12 @@ return (
         <Link to="/videos">
         <Menu.Item name='Videos'/>
         </Link>
-        
-        <Menu.Menu position='right'>
+        {/* this search bar is currently not in use */}
+        {/* <Menu.Menu position='right'>
             <Menu.Item>
-            <Input onChange={handleChange} icon='search' placeholder='Where is your pain?' />
+            <Input icon='search' placeholder='Where is your pain?' />
             </Menu.Item>
-        </Menu.Menu>
+        </Menu.Menu> */}
         </Menu>
         
         
@@ -81,8 +89,12 @@ return (
 </Switch>
 
     <Switch>
-        <Route path="/exercise-list">     
-            <ExerciseContainer exerciseData = {exerciseData} />
+        <Route path="/exercise-list">
+            <ExerciseSearch handleSearch={handleSearch}/> 
+            <br></br> 
+            <br></br> 
+            
+            <ExerciseContainer filterExercises = {filterExercises} />
         </Route> 
     </Switch>  
 
