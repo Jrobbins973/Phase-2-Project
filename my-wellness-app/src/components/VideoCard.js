@@ -14,7 +14,7 @@ return <div>
         allowFullScreen: true,
         style: {
         padding:0,
-        
+
         },
     }}
     />

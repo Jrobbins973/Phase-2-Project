@@ -5,11 +5,13 @@ function ExerciseCardFront(props){
     const {exercise}= props
     const {toggleFlip} = props
     const[ toggleButton, setToggleButton]= useState(false)
+    const[ save, setSave ] = useState(false)
     
 
 function handleToggle(){
         setToggleButton(!toggleButton)
     }
+
 
 
 return <Card className='card.ui.card'>
