@@ -79,6 +79,16 @@
         "duration": "Hold the stretch for 15-30 seconds on each side",
         "exercise_image":"https://images-prod.healthline.com/hlcmsresource/images/topic_centers/Fitness-Exercise/400x400_Stretches_to_Do_at_Work_Every_Day_Upper_Trap_Stretch.gif",
         "Video":"test"
+    },
+    {
+        "id": 13,
+        "exercise_name": "Neck Rotations",
+        "muscle_group": "Traps",
+        "category": "neck",
+        "description": "Relax and lean your head forward, slowly roll left and right",
+        "duration": "Hold for 15-30 seconds on each side",
+        "exercise_image":"https://images-prod.healthline.com/hlcmsresource/images/topic_centers/Fitness-Exercise/400x400_Stretches_to_Do_at_Work_Every_Day_Neck_Stretch.gif",
+        "Video":"test"
     }
 
 ],
@@ -123,7 +133,7 @@
     },
     {
         "id": 13,
-        "item_name": "1/2 Inch Thick Yoga Mat and Yoga Blocks",
+        "item_name": "1/2 Inch Thick Yoga Mat",
         "item_link":"https://www.amazon.com/BalanceFrom-BFGY-AP6GY-Anti-Tear-Exercise-Carrying/dp/B00RWFQYG0/ref=sr_1_6?crid=VCNDEUFSLC5C&keywords=yoga+mat&qid=1666704901&qu=eyJxc2MiOiI3LjU1IiwicXNhIjoiNy4wNyIsInFzcCI6IjYuNjkifQ%3D%3D&sprefix=yoga+m%2Caps%2C177&sr=8-6",
         "item_image": "https://m.media-amazon.com/images/I/91bwlFTZrgL._AC_SL1500_.jpg",
         "item_description":"1/2-Inch thick yoga mat with carrying strap, and two yoga blocks for at home exercising",

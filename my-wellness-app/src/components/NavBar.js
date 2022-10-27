@@ -54,9 +54,10 @@ const [equipmentSearch, setEquipmentSearch] = useState("")
 const handleEquipmentSearch = (e) => {
     setEquipmentSearch(e.target.value)
 }
-
+//filter variable for equipment
 const filterEquipment = 
 equipmentData.filter(equipment => equipment.item_description.toLowerCase().includes(equipmentSearch.toLowerCase()))
+
 
 return (
     <div className="App">
@@ -104,7 +105,9 @@ return (
             <br></br> 
             <br></br> 
             
-            <ExerciseContainer filterExercises = {filterExercises} />
+            <ExerciseContainer 
+            filterExercises = {filterExercises} 
+            />
         </Route> 
     </Switch>  
 
