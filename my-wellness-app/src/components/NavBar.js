@@ -83,6 +83,16 @@ const filterEquipment =
 equipmentData.filter(equipment => equipment.item_description.toLowerCase().includes(equipmentSearch.toLowerCase()))
 
 
+//DELETE BUTTON - BE CAREFUL
+
+const deleteTrackedExercise = (trackedExerciseId) => {
+    const updatedTrackedExerciseList = trackedData.filter(originalTrackedData => {
+        return originalTrackedData.id !==trackedExerciseId
+    })
+    setTrackedData(updatedTrackedExerciseList)
+}
+
+
 return (
     <div className="App">
     
@@ -152,7 +162,7 @@ return (
 
     <Switch>
         <Route path="/tracker">
-            <Tracker  trackedData={trackedData} addNewTrackedExercise={addNewTrackedExercise}/>
+            <Tracker  trackedData={trackedData} addNewTrackedExercise={addNewTrackedExercise} deleteTrackedExercise={deleteTrackedExercise}/>
         </Route>
     </Switch>  
 {/* </Switch> */}
