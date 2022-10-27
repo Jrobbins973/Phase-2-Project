@@ -94,19 +94,31 @@ return (
             </Button.Content>
         </Button>
         <Link to="/">
-            <Menu.Item name='Home'/>
+    <Button animated='fade'>
+        <Button.Content visible>Home</Button.Content>
+        <Button.Content hidden><Icon name='home'/></Button.Content>
+    </Button>
         </Link>
 
         <Link to="/exercise-list">
-        <Menu.Item name='Exercises'/>
+    <Button animated='fade'>
+        <Button.Content visible>Exercises</Button.Content>
+        <Button.Content hidden>You got this!</Button.Content>
+    </Button>
         </Link>
 
         <Link to="/equipment-list">
-        <Menu.Item name='Equipment'/>
+    <Button animated='fade'>
+        <Button.Content visible>Equipment</Button.Content>
+        <Button.Content hidden>Shop</Button.Content>
+    </Button>
         </Link>
 
         <Link to="/tracker">
-        <Menu.Item name='Tracker'/>
+    <Button animated='fade'>
+            <Button.Content visible>Tracker</Button.Content>
+            <Button.Content hidden>Lets go!</Button.Content>
+    </Button>
         </Link>
 
         {/* <Link to="/videos">
