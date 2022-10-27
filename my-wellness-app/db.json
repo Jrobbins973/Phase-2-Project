@@ -159,5 +159,12 @@
       "price": "21.00"
     }
   ],
-  "tracker": []
+  "tracker": [
+    {
+      "name": "gdfsag",
+      "date": "2022-10-04",
+      "comment": "gfdsg",
+      "id": 1
+    }
+  ]
 }
