@@ -77,16 +77,22 @@ function handleSubmit(e){
         <br></br>
         <br></br>
         
-        <Table celled padded>
-        <Table.Header>
-            <Table.Row>
-            <Table.HeaderCell singleLine>Exercise</Table.HeaderCell>
-            <Table.HeaderCell>Date</Table.HeaderCell>
-            <Table.HeaderCell>Comments</Table.HeaderCell>
-            </Table.Row>
-        </Table.Header>
-        </Table>
+        <table className="ui celled striped padded table">
+        <tbody>
+            <tr>
+            <th>
+                <h3 className="ui center aligned header">Exercise</h3>
+            </th>
+            <th>
+                <h3 className="ui center aligned header">Date</h3>
+            </th>
+            <th>
+                <h3 className="ui center aligned header">Comment</h3>
+            </th>
+            </tr>
         {renderTrackedTable}
+        </tbody>
+        </table>
 
 
 </div>)
