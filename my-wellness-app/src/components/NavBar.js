@@ -12,11 +12,12 @@ import Tracker from "./Tracker";
 
 const exerciseUrl = 'http://localhost:3000/exercises'
 const equipmentUrl = 'http://localhost:3000/equipment'
-
+const trackerUrl = 'http://localhost:3000/tracker'
 
 function NavBar (props){
 const [exerciseData, setExerciseData] = useState([])
 const [equipmentData, setEquipmentData] = useState([])
+const [trackedData, setTrackedData] = useState([])
 const [darkMode, setDarkMode] = useState(false)
 
 //fetches exercise data
@@ -31,6 +32,28 @@ useEffect(() => {
     .then(res => res.json())
     .then(setEquipmentData)
 },[])
+
+//fetches tracked data
+useEffect(() => {
+    fetch(trackerUrl)
+    .then(res => res.json())
+    .then(setTrackedData)
+},[])
+
+// POST for new tracked exercises
+const addNewTrackedExercise = (newTrackedExercise)=>{
+    let postRequest = {
+        method:"POST",
+        headers: {
+            'Content-type': "application/json",
+            'Accept': "application/json"
+        },
+        body:JSON.stringify(newTrackedExercise)
+    }
+    fetch(trackerUrl, postRequest)
+    .then(res => res.json())
+    .then(newlyTrackedData => setTrackedData([...trackedData, newlyTrackedData]))
+}
 
 //this accesses the css for body, and toggles dark mode
 const body = document.getElementsByTagName('body')[0]
@@ -129,7 +152,7 @@ return (
 
     <Switch>
         <Route path="/tracker">
-            <Tracker />
+            <Tracker  trackedData={trackedData} addNewTrackedExercise={addNewTrackedExercise}/>
         </Route>
     </Switch>  
 {/* </Switch> */}
