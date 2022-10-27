@@ -7,6 +7,7 @@ import {Link, Switch, Route} from 'react-router-dom'
 import VideoContainer from "./VideoContainer";
 import ExerciseSearch from "./ExerciseSearch";
 import EquipmentSearch from "./EquipmentSearch";
+import Tracker from "./Tracker";
 
 
 const exerciseUrl = 'http://localhost:3000/exercises'
@@ -81,10 +82,16 @@ return (
         <Menu.Item name='Equipment'/>
         </Link>
 
-        <Link to="/videos">
-        <Menu.Item name='Videos'/>
+        <Link to="/tracker">
+        <Menu.Item name='Tracker'/>
         </Link>
+
+        {/* <Link to="/videos">
+        <Menu.Item name='Videos'/>
+        </Link> */}
+
         {/* this search bar is currently not in use */}
+
         {/* <Menu.Menu position='right'>
             <Menu.Item>
             <Input icon='search' placeholder='Where is your pain?' />
@@ -121,8 +128,8 @@ return (
     </Switch> 
 
     <Switch>
-        <Route path="/videos">
-            <VideoContainer />
+        <Route path="/tracker">
+            <Tracker />
         </Route>
     </Switch>  
 {/* </Switch> */}
