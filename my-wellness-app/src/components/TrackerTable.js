@@ -1,8 +1,21 @@
 import React from "react";
-import {Header, Table, Container} from 'semantic-ui-react'
+import {Header, Icon, Button} from 'semantic-ui-react'
 
 function TrackerTable(props){
-    const {trackedExercise} = props
+    const {trackedExercise, deleteTrackedExercise} = props
+    console.log(trackedExercise.id)
+
+
+const onDelete = () => {
+    fetch(`http://localhost:3000/tracker/${trackedExercise.id}`, {
+        method:"DELETE"
+    })
+    .then(res => res.json())
+    .then(() => {
+        deleteTrackedExercise(trackedExercise.id)
+    })
+}
+
 
 
     return ( 
@@ -12,7 +25,7 @@ function TrackerTable(props){
         <td>{trackedExercise.name}</td>
         <td>{trackedExercise.date}</td>
         <td>{trackedExercise.comment}</td>
-        
+        <Button onClick={onDelete} size='mini' color='red'>X</Button>
         </tr>
     )
 

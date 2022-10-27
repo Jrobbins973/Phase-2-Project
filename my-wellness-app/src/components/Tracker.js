@@ -3,7 +3,7 @@ import { Button, Checkbox, Form, Header, Table } from 'semantic-ui-react'
 import TrackerTable from "./TrackerTable";
 
 function Tracker(props){
-    const{addNewTrackedExercise} = props
+    const{addNewTrackedExercise, deleteTrackedExercise} = props
     
     const [exercise, setExercise] = useState("")
     const [date, setDate] = useState("")
@@ -37,6 +37,7 @@ function handleSubmit(e){
     <TrackerTable 
     key={trackedExercise.id}
     trackedExercise={trackedExercise}
+    deleteTrackedExercise={deleteTrackedExercise}
     />)
 
     return ( 

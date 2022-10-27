@@ -159,19 +159,5 @@
       "price": "21.00"
     }
   ],
-  "tracker": [
-    {
-      "id": 15,
-      "name": "Toe Touches",
-      "date": "2022-10-27",
-      "comment": "Felt great to do this stretch!"
-    },
-    {
-      "id": 16,
-      "name": "Push-Ups",
-      "date": "2022-10-27",
-      "comment": "Feelin good!"
-    }
-
-  ]
+  "tracker": []
 }
