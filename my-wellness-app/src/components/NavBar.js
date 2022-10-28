@@ -181,7 +181,6 @@ return (
 </div>
 )
 
-
 }
 
 export default NavBar
